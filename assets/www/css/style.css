@@ -1,0 +1,191 @@
+a,
+a:hover,
+a:active{
+  text-decoration: none;
+}
+
+a.btn{
+  color: #fff !important;
+}
+
+.blue{
+  color: #2489CE;
+}
+
+.gray{
+  color: #828282;
+}
+
+h1{
+	margin: 0 !important;
+}
+
+.ui-body-a,
+.ui-bar-a{
+  background-image: url("img/bg_pattern.png");
+}
+
+.ui-icon-qrcode{
+	background-image: url("img/qrcode-icon_64.png");
+}
+
+.icon-btn{
+	padding: 10px;
+	width: 100px;
+	height: 100px;
+}
+
+.btn .title{
+	display: block;
+	height: 28px;
+}
+
+a.centered{
+	display: block;
+	margin: 0 auto;
+}
+
+p.centered{
+	text-align: center;
+}
+
+#search.centered{
+	display: block;
+	margin: 0 auto;
+	width: 172px;
+}
+
+#search input{
+	height: 30px;
+	margin-top: 0px;
+  text-align: center;
+}
+
+.spacer{
+	height: 80px;
+}
+
+.body{
+  padding: 0 8px;     
+}
+
+.foto{
+  margin: 6px 0;
+}
+
+.foto-phone{
+  max-width: 48%;
+  float: left;
+  margin-right: 6px;
+}
+
+.pub .pub-type{
+  margin-top: 6px;
+}
+
+.pub .basic-info span{
+  color: #828282;
+}
+
+.pub .icons{
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.pub .icons .icon{
+  margin: 2px;
+  width: 32px;
+  height: 32px;
+}
+
+.pub .contact{
+  margin-top: 6px;
+}
+
+.pub .contact-phone{
+  clear: left;
+}
+
+.pub .contact div{
+  padding-left: 20px;   
+  background: url(img/home.png) left center no-repeat;
+  height: 24px;
+  line-height: 24px;
+}
+
+.pub .contact .address{
+  background-image: url(img/home.png);
+  background-position: left top;
+}
+
+.pub .contact .phone{
+  background-image: url(img/phone.png);
+}
+
+.pub .contact .email{
+  background-image: url(img/mail.png);
+}
+                      
+.footer{
+  padding-bottom: 4px;
+}
+
+.benefits h5{
+  padding-bottom: 12px;
+}
+
+.benefits .benefit{
+  border: 1px dotted black;
+  margin: 2px 0;
+  padding: 2px;
+  font-size: 11px;
+  border-radius: 3px;
+}
+
+.benefits a{
+}
+
+.benefits img{
+  margin: 4px;
+}
+
+.benefits .benefit img{
+	
+}
+
+.benefits .benefit h3{
+  margin: 0;
+}
+
+#benefit .title{
+  font-size: 16px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+#benefit .basic-info{
+  
+}
+
+#benefit .info{
+  font-size: 12px;
+}
+
+#benefit .conditions{
+  font-size: 11px;
+  color: #828282;
+}
+
+.ratings dt{
+  clear: both;
+}
+
+.ratings dd{
+  margin-bottom: 12px;
+  /*float: right;*/
+  margin-left: 60px;
+}
+
+.ratings #thanks{
+  margin-top: 20px;
+}
