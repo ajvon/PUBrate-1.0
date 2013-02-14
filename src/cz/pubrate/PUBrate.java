@@ -22,6 +22,7 @@ package cz.pubrate;
 import android.app.Activity;
 import android.os.Bundle;
 import org.apache.cordova.*;
+//import cz.pubrate.R;
 
 public class PUBrate extends DroidGap
 {
