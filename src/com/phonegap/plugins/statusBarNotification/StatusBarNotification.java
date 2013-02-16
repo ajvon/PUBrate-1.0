@@ -144,6 +144,7 @@ public class StatusBarNotification extends CordovaPlugin {
     public void onNewIntent(Intent intent) {
         // The incoming Intent may or may not have been for a notification.
         String tag = intent.getStringExtra("notificationTag");
+        
         if (tag != null) {
         	 this.webView.sendJavascript("window.Notification.callOnclickByTag('"+ tag + "')");
         }

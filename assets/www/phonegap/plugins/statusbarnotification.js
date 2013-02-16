@@ -44,12 +44,15 @@ var NotificationMessenger = function() { }
  * @param body Body of the notification
  * @deprecated Use the W3C standard window.Notification API instead.
  */
-NotificationMessenger.prototype.notify = function(title, body, flag) {
+NotificationMessenger.prototype.notify = function(title, options) {
     if (window.Notification) {
-        this.activeNotification = new window.Notification(title, {
+        /*this.activeNotification = new window.Notification(title, {
             body: body,
-            flag: flag
-        });
+            flag: flag,
+            tag: tag,
+            onclick: response
+        });*/
+        this.activeNotification = new window.Notification(title, options);
     }
 }
 
@@ -117,6 +120,7 @@ if (typeof window.Notification == 'undefined') {
     // Not part of the W3C API. Used by the native side to call onclick handlers.
     window.Notification.callOnclickByTag = function(tag) {
         console.log('callOnclickByTag');
+        
         var notification = window.Notification.active[tag];
         if (notification && notification.onclick && typeof notification.onclick == 'function') {
             console.log('inside if');

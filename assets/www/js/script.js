@@ -23,7 +23,7 @@ $(document).bind("pageshow", function(event, ui) {
 });
 
 $(document).bind('pageinit', function(){
-  $(".footer").fixedtoolbar({ tapToggleBlacklist: "a, button, input, select, textarea, img, .ui-header-fixed, .ui-footer-fixed" });  //alert("pageinit");  $('#go').bind('tap', function(){      window.plugins.statusBarNotification.notify("Put your title here", "Put your message here");  });
+  $(".footer").fixedtoolbar({ tapToggleBlacklist: "a, button, input, select, textarea, img, .ui-header-fixed, .ui-footer-fixed" });  //alert("pageinit");  $('#go').bind('tap', function(){      window.plugins.statusBarNotification.notify(          "Restaurace U Špirků - PUBrate",          {              body: "Ohodnoťte prosím Váš zážitek v restauraci",              onclick: function(){                  $.mobile.changePage("notif.html");              }          });  });
 });
 
 $(document).bind('pagechange', function(event, data){
