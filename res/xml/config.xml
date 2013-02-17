@@ -53,6 +53,7 @@
     <plugin name="Globalization" value="org.apache.cordova.Globalization"/>
     <plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser"/>
     <plugin name="StatusBarNotification" value="com.phonegap.plugins.statusBarNotification.StatusBarNotification"/>
+    <plugin name="PushPlugin" value="com.plugin.GCM.PushPlugin" />
 </plugins>
 </cordova>
 

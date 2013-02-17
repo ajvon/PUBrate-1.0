@@ -21,6 +21,8 @@ package cz.pubrate;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
+
 import org.apache.cordova.*;
 //import cz.pubrate.R;
 
@@ -31,6 +33,13 @@ public class PUBrate extends DroidGap
     {
         super.onCreate(savedInstanceState);
         super.loadUrl("file:///android_asset/www/index.html");
+    }
+    
+    @Override
+    public void onBackPressed(){
+    	Log.v("pubrate", "backbutton pressed - sending app to background");
+    	moveTaskToBack(true);
+    	return;
     }
 }
 
