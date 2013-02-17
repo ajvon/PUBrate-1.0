@@ -54,6 +54,7 @@
     <plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser"/>
     <plugin name="StatusBarNotification" value="com.phonegap.plugins.statusBarNotification.StatusBarNotification"/>
     <plugin name="PushPlugin" value="com.plugin.GCM.PushPlugin" />
+    <plugin name="GoogleAnalyticsTracker" value="com.phonegap.plugins.analytics.GoogleAnalyticsTracker" />
 </plugins>
 </cordova>
 

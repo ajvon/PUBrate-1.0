@@ -26,6 +26,8 @@ import android.util.Log;
 import org.apache.cordova.*;
 //import cz.pubrate.R;
 
+import com.google.android.apps.analytics.GoogleAnalyticsTracker;
+
 public class PUBrate extends DroidGap
 {
     @Override
@@ -40,6 +42,15 @@ public class PUBrate extends DroidGap
     	Log.v("pubrate", "backbutton pressed - sending app to background");
     	moveTaskToBack(true);
     	return;
+    }
+    
+    @Override
+    public void onDestroy() 
+    {
+        super.onDestroy();
+        GoogleAnalyticsTracker tracker = com.google.android.apps.analytics.GoogleAnalyticsTracker.getInstance();
+        tracker.dispatch();
+        tracker.stopSession();
     }
 }
 
