@@ -1,29 +1,15 @@
 $(document).bind("pagebeforehide", function(event, ui) {
-  //alert("pagehide");
-  /*$.mobile.loading( 'show', {
-  	text: 'foo',
-  	textVisible: true,
-  	theme: 'e',
-  	html: ""
-  });*/
 });
 
 $(document).bind("orientationchange", function(event, ui){
-  //alert("orientationchange");
 });
 
 $(document).bind("pageshow", function(event, ui) {
-  //alert("pageshow");
   $.mobile.loading( 'hide' );
-  $('.pub .icons .icon').bind("tap", function(event, ui){
-    $('#icon-popup p').html(event.target.title);
-    $('#icon-popup').popup('open');
-    event.preventDefault();
-  });
 });
-
+document.addEventListener("deviceready", function(){    $('#scanQrBtn').unbind('tap');    $('#scanQrBtn').bind('tap', qrScan);    //alert("register");    window.plugins.pushNotification.register(        successHandler,        errorHandler,        {"senderID":"94113431978","ecb":"onNotificationGCM"}    );});
 $(document).bind('pageinit', function(){
-  $(".footer").fixedtoolbar({ tapToggleBlacklist: "a, button, input, select, textarea, img, .ui-header-fixed, .ui-footer-fixed" });  //alert("pageinit");    //$('#go').bind('tap', function(){  document.addEventListener("deviceready", function(){      //alert("register");      window.plugins.pushNotification.register(          successHandler,          errorHandler,          {"senderID":"94113431978","ecb":"onNotificationGCM"}      );  });  //});      /*$('#go').bind('tap', function(){      window.plugins.statusBarNotification.notify(          "Restaurace U Špirků - PUBrate",          {              body: "Ohodnoťte prosím Váš zážitek v restauraci",              onclick: function(){                  $.mobile.changePage("notif.html");              }          });  });*/
+  $(".footer").fixedtoolbar({ tapToggleBlacklist: "a, button, input, select, textarea, img, .ui-header-fixed, .ui-footer-fixed" });  //alert("pageinit");    //$('#go').bind('tap', function(){  //});      $('#go').bind('tap', function(){      $.mobile.changePage("pub.html", { transition: "flow"});  });
 });
 
 $(document).bind('pagechange', function(event, data){

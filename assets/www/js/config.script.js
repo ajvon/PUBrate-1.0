@@ -1,4 +1,4 @@
-$(document).bind('pageinit', function(){
+var SERVER_HOST = "http://oneplace.cz/pr2";$(document).bind('pageinit', function(){
   
   //Nechci skryvat paticku pri tapnuti na img.icon
   $(".footer").fixedtoolbar({ tapToggleBlacklist: "a, button, input, select, textarea, img.icon, .ui-header-fixed, .ui-footer-fixed" });

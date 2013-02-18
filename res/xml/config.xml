@@ -55,6 +55,7 @@
     <plugin name="StatusBarNotification" value="com.phonegap.plugins.statusBarNotification.StatusBarNotification"/>
     <plugin name="PushPlugin" value="com.plugin.GCM.PushPlugin" />
     <plugin name="GoogleAnalyticsTracker" value="com.phonegap.plugins.analytics.GoogleAnalyticsTracker" />
+    <plugin name="BarcodeScanner" value="com.phonegap.plugins.barcodescanner.BarcodeScanner"/>
 </plugins>
 </cordova>
 

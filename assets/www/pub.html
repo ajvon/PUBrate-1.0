@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>PUBrate</title>  	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  	  	
+  </head>
+  
+  <body data-theme="a">
+  	<div data-role="page" id="pub" data-theme="a">
+  		<div data-role="header">
+  			<h4 class="pubName">Název podniku</h4>
+        	<a data-role="button" data-transition="none" data-theme="a" href="index.html" data-icon="home" data-iconpos="notext" class="ui-btn-left"></a>
+  		</div>
+      <div class="body pub" data-role="content">
+        <div data-role="popup" id="icon-popup" class="popup" data-theme="a">
+			<p class="alert alert-info">Popisek img.icon</p>
+		</div>
+        <div class="row-fluid">
+          <div class="foto span6 hidden-phone">
+            <img src="unknown.jpg">
+          </div>
+          <div class="foto foto-phone visible-phone">
+            <img src="unknown.jpg">
+          </div>
+          <div class="span6 pub-type">
+            <strong>typ</strong>
+          </div>
+          <div class="span6 basic-info">
+              základní info
+          </div>
+          <div class="span6 contact hidden-phone">
+            <div class="address">
+              <a href="geo:0,0?q=Praha">
+                adresa
+              </a>
+            </div>
+            <div class="phone">
+              <a href="tel:+420123456789">telefon</a>
+            </div>
+            <div class="email">
+              <a href="mailto:a@b.cz">
+                email
+              </a>
+            </div>
+          </div>
+          <div class="span6 icons hidden-phone">
+            ikony
+          </div>
+          <div class="span12 contact contact-phone visible-phone">
+            <div class="address">
+              <a href="geo:0,0?q=Praha">
+                adresa
+              </a>
+            </div>
+            <div class="phone">
+              <a href="tel:+420123456789">telefon</a>
+            </div>
+            <div class="email">
+              <a href="mailto:a@b.cz">
+                email
+              </a>
+            </div>
+          </div>
+          <div class="span12 icons visible-phone">          	ikony
+          </div>
+        </div>        <div class="info">        	info        </div>
+      </div>
+      <div class="footer" data-role="footer" data-position="fixed">
+        <a href="rating.html" data-icon="star" class="button ui-btn-left">Ohodnotit</a>
+      	<a href="benefits.html" data-icon="check" class="button ui-btn-right">Zobrazit slevy</a>
+        <span class="ui-title" />
+      </div>
+  	</div>
+  </body>
+</html>
