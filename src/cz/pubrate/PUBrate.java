@@ -34,6 +34,10 @@ public class PUBrate extends DroidGap
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        super.init();
+        
+        appView.addJavascriptInterface(this, "PubrateActivity");
+        
         super.loadUrl("file:///android_asset/www/index.html");
     }
     

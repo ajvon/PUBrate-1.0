@@ -1,0 +1,73 @@
+{
+    "name": "U Špirků",
+    "imageUrl": "http://www.u-spirku.cz/gallery/photo0080.jpg",
+    "type": "Pivnice",
+    "basicInfo": "<div><span>Počet míst: </span>73</div><div><span>Kuchyně: </span>česká, mezinárodní</div>",
+    "addressHtml": "Kožná&nbsp;12/1024, Praha&nbsp;1, 110&nbsp;00",
+    "addressGeo": "0,0?q=Kožná 12/1024, Praha 1, 11000",
+    "phoneHtml": "+420 224 210 073",
+    "phoneTel": "+420224210073",
+    "email": "lenka.richtrova@u-spirku.cz",
+    "info": "<p>Tradiční restaurace U Špirků v Kožné ulici č. 12, se nachází 50 m jižně od Staroměstského náměstí. Tato restaurace patřila mezi nejznámější pražské podniky konce 19. a I. poloviny 20. století.</p><p>Na objednávku lze využít služeb obsluhované vyhlídkové terasy, ze které je fantastický výhled na celou historickou část Prahy.</p><p>Hypermoderní kuchyňský provoz je srdcem restaurace a pro naše hosty vytváří hotová i minutková jídla v té nejvyšší kvalitě. Jako jedna z mála, má restaurace U Špirků denně obměňovaný sortiment hotových jídel a poledních menu za velmi výhodné ceny. Pracovní tým restaurace U Špirků je přesvědčený o tom, že dnes stejně jako před více než stotřiceti lety platí, že nejvýhodnější klasické stravování v centru Prahy je v restauraci U Špirků. Budeme velice rádi, když se sami přijdete přesvědčit.</p>",
+    "icons": [
+        {
+            "icon": "nosmoking-inactive.png",
+            "title": "Podnik má kuřácké prostory"
+        },
+        {
+            "icon": "parking.png",
+            "title": "Podnik má vlastní parkoviště"
+        },
+        {
+            "icon": "lounge-inactive.png",
+            "title": "Podnik nemá salonek"
+        },
+        {
+            "icon": "terrace-inactive.png",
+            "title": "Podnik nemá venkovní terasu nebo zahrádku"
+        },
+        {
+            "icon": "cards.png",
+            "title": "Podnik přijímá platební karty"
+        },
+        {
+            "icon": "aircondition-inactive.png",
+            "title": "Podnik nemá klimatizaci"
+        },
+        {
+            "icon": "wifi-inactive.png",
+            "title": "Podnik neposkytuje hostům wifi připojení k internetu"
+        },
+        {
+            "icon": "mealvouchers.png",
+            "title": "Podnik přijímá stravenky"
+        }
+    ],
+    "benefits": {
+       "8747": {
+           "id": "8747",
+           "imageUrl": "/_data/benefits/benefit1.jpg",
+           "imageUrlSmall": "/_data/benefits/benefit1.jpg",
+           "title": "1 + 1 káva zdarma",
+           "shortDesc": "Objednejte si u nás jedno espresso a při předložení kódu obdržíte druhé zdarma.",
+           "conditions": "<p>Zdarma bude započítána levnější káva.</p>"
+       },
+       "8785": {
+           "id": "8785",
+           "imageUrl": "/_data/benefits/benefit2.jpg",
+           "imageUrlSmall": "/_data/benefits/benefit2.jpg",
+           "title": "20% sleva na všechny steaky",
+           "shortDesc": "Objednejte si jakýkoli steak z našeho menu a získejte na něj po předložení kódu 20% slevu.",
+           "conditions": "Vztahuje se na všechny steaky a steaková menu. Sleva se nevztahuje na přílohy."
+       },
+       "8791": {
+           "id": "8791",
+           "imageUrl": "/_data/benefits/benefit3.png",
+           "imageUrlSmall": "/_data/benefits/benefit3.png",
+           "title": "Dezert ke každému polednímu menu",
+           "shortDesc": "Získejte po předložení kódu dezert k polednímu menu zdarma.",
+           "conditions": "<p>Platí pouze v pracovní dny.</p>"
+       }
+    },
+    "benefitsConditions": "<p>Kód slevy předložte obsluze k nahlédnutí.</p><p class='gray'>Pokud není uvedeno jinak, může každý kód využít pouze jedna osoba.</p>"
+}
