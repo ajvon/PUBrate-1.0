@@ -12,45 +12,109 @@
 
   	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    
-
-  	<link rel="stylesheet" href="jquery/jquery.mobile/jquery.mobile.min.css" />
-
-  	<script src="jquery/jquery.min.js"></script>
-
-    <script src="js/config.script.js"></script>
-
-  	<script src="jquery/jquery.mobile/jquery.mobile.min.js"></script>
-
-  	
-
-  	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-
-    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-
-  	<script src="bootstrap/js/bootstrap.min.js"></script>
-
-
-	<script src="phonegap/cordova-2.3.0.js"></script>
-	
-	<script src="phonegap/plugins/statusbarnotification.js"></script>
-    
-
-    <script src="js/script.js"></script>
-
-  	
-
-  	<link rel="stylesheet" href="css/style.css" />
-
   </head>
 
   
 
   <body data-theme="a">
+  
+  	
 
   	<div data-role="page" id="home">
 
+		<script type="text/javascript">
+	  		if ((typeof cordova == 'undefined') && (typeof Cordova == 'undefined')) alert('Cordova variable does not exist. Check that you have included cordova.js correctly');
+	  			else console.log('Cordova OK');
+            if (typeof CDV == 'undefined') alert('CDV variable does not exist. Check that you have included cdv-plugin-fb-connect.js correctly');
+            	else console.log('CDV OK');
+            if (typeof FB == 'undefined') alert('FB variable does not exist. Check that you have included the Facebook JS SDK file.');
+            	else console.log('FB OK');
+            	
+        	FB.Event.subscribe('auth.login', function(response) {
+                               alert('auth.login event');
+                               console.log("login: " + response);
+         						console.log("login: " + JSON.stringify(response));
+                               });
+            
+            FB.Event.subscribe('auth.logout', function(response) {
+                               alert('auth.logout event');
+                               });
+            
+            FB.Event.subscribe('auth.sessionChange', function(response) {
+                               alert('auth.sessionChange event');
+                               console.log("sessionChange: " + response);
+         						console.log("sessionChange: " + JSON.stringify(response));
+                               });
+            
+            FB.Event.subscribe('auth.statusChange', function(response) {
+                               alert('auth.statusChange event');
+                               console.log("StatusChange: " + response);
+         						console.log("StatusChange: " + JSON.stringify(response));
+                               });
+                               
+           function login() {
+                FB.login(
+         			function(response) {
+         				console.log(response);
+         				console.log(JSON.stringify(response));
+                         if (response.authResponse.status == "connected") {
+                    	     alert('logged in');
+                         } else {
+                        	 alert('not logged in');
+                         }
+                         },
+                         { scope: "" }
+                         );
+            }
+            
+            	function facebookWallPost() {
+					console.log('Debug 1');
+					var params = {
+						method: 'feed',
+						name: 'PUBrate',
+						link: 'http://pubrate.cz',
+						picture: 'http://fbrell.com/f8.jpg',
+						caption: 'PUBrate caption',
+						description: 'To bude zábava. Tohle je description.'
+					};
+					console.log(JSON.stringify(params));
+					FB.ui(params, function(obj) { console.log(JSON.stringify(obj));});
+				}           
+				 
+            function logout() {
+                FB.logout(function(response) {
+                          alert('logged out');
+                          });
+            }
+            
+            document.addEventListener('deviceready', function() {
+            	console.log("Notif deviceready: Calling FB.init!!!!");
+                                      try {
+                                      alert('Device is ready! Make sure you set your app_id below this alert.');
+                                      FB.init({ appId: "237545436279499", nativeInterface: CDV.FB, useCachedDialogs: false });
+                                      document.getElementById('data').innerHTML = "";
+                                      } catch (e) {
+                                      alert(e);
+                                      }
+                                      }, false);
+                                      
+  			function testing(){
+  				FB.api('/me/permissions', function (response) {
+				    console.log("TESTING: " + JSON.stringify(response));
+				} );
+  			}
+	  	</script>
+
   		<p>Notifikace</p>
+  		
+  		<input type="button" onclick="login();" value="Přihlásit na facebook" /> <input type="button" onclick="logout();" value="Odhlásit z facebooku" />
+  		<br />
+  		<input type="button" onclick="facebookWallPost();" value="Odeslat na facebook" />
+  		<br />
+  		<br />
+  		<input type="button" onclick="testing();" value="Testovací funkce" />
+  		
+		<div id="data">FB data</div>  		
 
   	</div>
 

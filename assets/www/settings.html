@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>PUBrate</title>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+  
+  <body data-theme="a">
+  	<div data-role="page" id="settings" data-theme="a">
+  		<div data-role="header">
+  			<h4>
+          PUBrate
+          <small>Nastavení</small>
+        </h4>
+        <a id="backBtn" data-role="button" data-theme="a" data-icon="back" data-iconpos="notext" class="ui-btn-left"></a>
+  		</div>
+      <div class="body settings" data-role="content">
+        <div class="text-center">
+          <p><img class="foto" src="img/avatar-unknown.jpg" /></p>
+          <div id="name"><h5 class="gray">Nepřihlášen</h5></div>		  		  <div id="fbNotLogged">
+          <p>			<a href="#" id="fbLogin">
+            <div class="button_outside_border_blue">
+              <div class="button_inside_border_blue">
+                Přihlásit pomocí facebooku
+              </div>
+            </div>            </a>
+          </p>
+          <p class="gray"><small>Přihlášením souhlasíte s <a href="#" class="conditionsBtn">podmínkami užití</a></small></p>          </div>                    <div id="fbLogged">          	<p class="gray"><small><a id="fbLogout" href="#" class="lowVisible">Odhlásit</a> | <a href="#" class="lowVisible conditionsBtn">Podmínky užití</a></small></p>          </div>
+        </div>
+      </div>
+      <!--<div class="footer" data-role="footer" data-position="fixed">
+        <a href="rating.html" data-icon="star" class="button ui-btn-left">Ohodnotit</a>
+      	<a href="benefits.html" data-icon="check" class="button ui-btn-right">Získat výhodu</a>
+        <span class="ui-title" />
+      </div>-->      		<div data-role="popup" id="fbConnectFailed-popup">			<p>Přihlášení k Facebooku selhalo.</p>		</div>
+  	</div>
+  </body>
+</html>

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
-	<classpathentry kind="lib" path="src/com/plugin/android-support-v13.jar"/>
-	<classpathentry kind="lib" path="src/com/phonegap/plugins/analytics/libGoogleAnalytics.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Paulie/Dropbox/PUBrate-1.0/libs/android-support-v13.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Paulie/Dropbox/PUBrate-1.0/libs/libGoogleAnalytics.jar"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="lib" path="libs/facebook-android-sdk.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
