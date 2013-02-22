@@ -24,6 +24,11 @@ $(document).bind('pageinit', function(){
             testing();
         });
         
+        $('#settings #fbFanBtn').bind('tap', function(){
+            console.log('FB become a fan');
+            window.plugins.childBrowser.showWebPage("http://www.facebook.com/PUBrate.cz", { showLocationBar: true });
+        });
+        
         FB.getLoginStatus(function(response) {
             
             if (response.status == 'connected') {
