@@ -108,9 +108,11 @@ public class ConnectPlugin extends Plugin {
         	// Save the callback Id, in the case that the user's session
         	// is open and we can get user info
         	this.loginCallbackId = callbackId;
+        	Log.v("pubrate", args.toString());
         	
         	// Get the permissions
         	String[] arrayPermissions = new String[args.length()];
+        	
         	try {
                 for (int i=0; i<args.length(); i++) {
                     arrayPermissions[i] = args.getString(i);
@@ -191,7 +193,9 @@ public class ConnectPlugin extends Plugin {
                 // Set up the activity result callback to this class
             	cordova.setActivityResultCallback(this);
                 // Can only ask for read permissions initially
-                session.openForRead(openRequest);              
+            	//PUBrate:IVON:changed from openForRead to openForPublish
+            	//session.openForRead(openRequest);          
+                session.openForPublish(openRequest);              
         	}
         }
 
