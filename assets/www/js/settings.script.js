@@ -4,7 +4,6 @@ $(document).bind('pageinit', function(){
         //$.mobile.loading('show');
     });
     $('#settings').one('pagebeforeshow', function(){
-        $.mobile.loading('show');
         console.log('settings pageinit');
         
         $(document).unbind('backbutton');
@@ -17,6 +16,9 @@ $(document).bind('pageinit', function(){
             console.log('backToScan 2');
             $.mobile.changePage("index.html", { transition: "slidedown", reverse: true });
         });
+        
+        $('#settings #addPermsRequired').hide();
+        //checkPerms();
         
         $('#settings .conditionsBtn').bind('tap', function(){
             testing();
@@ -46,21 +48,25 @@ $(document).bind('pageinit', function(){
             });
         });
         
-        $('#settings #fbLogin').bind('tap', function(){
+        $('#settings #fbLogin, #settings #fbAddPerms').bind('tap', function(){
             console.log("fbLogin");
-            FB.login(
+            CDV.FB.login(
+                {scope: "publish_stream,publish_checkins"},
                 function(response) {
                     console.log("fbLogin response: " + JSON.stringify(response));
                     console.log(JSON.stringify(response.status));
                     console.log(JSON.stringify(response.authResponse));
                     if (response.status == "connected") {
-                        alert('logged in');
+                        console.log('logged in');
                         showLoggedIn();
+                        //checkPerms();
                     } else {
                         $('#fbConnectFailed-popup').popup('open');
                     }
                 },
-                { scope: "email" }
+                function(response){
+                    alert("CDV.FB.login fail:" + response);
+                }
             );
         });
     });
@@ -84,6 +90,7 @@ function showLoggedIn(){
     },
     function(response) {
         if (!response.error) {
+            checkPerms();
             $('#settings img.foto').attr('src', response.picture.data.url);
             $('#settings #name').html('<h5 class="gray">Přihlášen jako</h5> <h3>' + response.name + '</h3>');
             
@@ -92,6 +99,29 @@ function showLoggedIn(){
             
             user = response;
             console.log('Got the user\'s name and picture: ' + JSON.stringify(response));
+        }
+    });
+}
+
+function checkPerms(){
+    console.log("CHECKING FB Permissions");
+    FB.api('/me/permissions', function (response) {
+        console.log("TESTING PERMISSIONS: " + JSON.stringify(response));
+        if(!response.data[0].publish_stream
+                || !response.data[0].publish_checkins){
+            $('#settings #addPermsRequired').show();
+        }else{
+            $('#settings #addPermsRequired').hide();
+        }
+        if(!response.data[0].publish_checkins){
+            console.log("dont have publish_checkins");
+        }else{
+            console.log("FB: publish_checkins OK");
+        }
+        if(!response.data[0].publish_stream){
+            console.log("dont have publish_stream");
+        }else{
+            console.log("FB: publish_stream OK");
         }
     });
 }
