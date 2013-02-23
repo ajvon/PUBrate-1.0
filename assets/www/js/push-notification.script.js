@@ -29,7 +29,7 @@ function onNotificationGCM(e) {
                     {
                         body: "Ohodnoťte prosím Váš zážitek v restauraci",
                         onclick: function(){
-                            $.mobile.changePage("notif.html");
+                            $.mobile.changePage("rating.html");
                         }
                     }
                 );
@@ -42,7 +42,7 @@ function onNotificationGCM(e) {
             }
             else{    // otherwise we were launched because the user touched a notification in the notification tray.
                 $("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
-                $.mobile.changePage("notif.html");
+                $.mobile.changePage("rating.html");
             }
 
             $("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');

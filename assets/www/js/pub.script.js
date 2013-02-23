@@ -64,8 +64,30 @@ $(document).bind('pageinit', function(){
 
 
 function isPub(pubId){
-    
-    return true;
+    var isPubResult = false;
+    $.mobile.loading('show');
+    console.log("waiting for sync request: " + pubId);
+    $.ajax({
+        url: SERVER_HOST + "/ispub.php",
+        cache: false,
+        async: false,
+        type: "POST",
+        dataType: "json",
+        data: {
+            'pubId': pubId
+        }
+    })
+    .done(function(response) {
+        console.log('sync request response');
+        if(response.status == "ok"){
+            isPubResult = true;
+        }
+    })
+    .always(function(){
+        $.mobile.loading('hide');
+    });
+    console.log('sync after request: ' + isPubResult);
+    return isPubResult;
 }
 
 function gotoPub(pubId){
@@ -96,24 +118,6 @@ function gotoPub(pubId){
 
 function parsePub(back){
     back = typeof back !== 'undefined' ? back : false;
-    //window.localStorage.setItem('currentPub', JSON.stringify(obj));
-    
-    /*$(document).one('pageinit', function(){
-        alert("pub pageinit");
-        $(document).unbind('backbutton');
-        $(document).one('backbutton', function(){
-            console.log("backToScan");
-            gotoScan();
-        });
-        //$(this).unbind('pageinit');
-        console.log("pub pageinit");
-        
-        
-        $('#pub').bind('pageshow', function(){
-            //alert("pageshow");
-            //$.mobile.loading('hide');
-        });
-    });*/
     
     $.mobile.changePage("pub.html", { transition: "slide", reverse: back });
 }

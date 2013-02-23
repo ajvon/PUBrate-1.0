@@ -20,25 +20,13 @@ $(document).bind('pageinit', function(){
     });
 })*/
 
-function gotoScan(){
+/*function gotoScan(){
     console.log("gotoScan");
     //$(document).one('pageinit', function(){
         alert("scan pageinit");
         console.log("scan pageinit 2");
-        
-    //});
-    //$.mobile.changePage("index.html", { transition: "slide", reverse: true });
-    //$.mobile.changePage("index.html", { transition: "slide", reverse: true });
-    /*console.log("urlHistory: " + $.mobile.urlHistory);
-    console.log("urlHistory stack: " + $.mobile.urlHistory.stack);
-    console.log("urlHistory stack len: " + $.mobile.urlHistory.stack.length);
-    console.log("clearHistory: " + $.mobile.urlHistory.clearHistory);
-    console.log("History length: " + $.mobile.urlHistory.length);
-    $.mobile.urlHistory.back(history.length - 1);
-    $.mobile.changePage("index.html", { transition: "slide", reverse: true });
-    clearHistory();
-    console.log("History length: " + $.mobile.urlHistory.stack.length);*/
-}
+      
+}*/
 
 function qrScan(){
     window.plugins.barcodeScanner.scan(
@@ -53,7 +41,24 @@ function qrScan(){
             }
             
             //$('#scanQrBtn').unbind('tap', qrScan);
-            pubId = '958';
+            var pubCode = '';
+            var arr1 = result.text.split('/');
+            console.log(arr1);
+            console.log(JSON.stringify(arr1));
+            if((arr1[0].toLowerCase() == "http:" || arr1[0].toLowerCase() == "https:")
+                    && (arr1[2].toLowerCase() == "pubrate.cz" || arr1[2].toLowerCase() == "www.pubrate.cz")){
+                pubCode = arr1[3].toLowerCase();
+            }else if(arr1[0].toLowerCase() == "pubrate.cz"
+                        || arr1[0].toLowerCase() == "www.pubrate.cz"){
+                pubCode = arr1[1].toLowerCase();
+            }else{
+                $('#wrongQR-popup').popup('open');
+                return ;
+            }
+            console.log('got pubCode: ' + pubCode);
+            
+            //pubId = '958';
+            pubId = pubCode;
             if(isPub(pubId)){
                 gotoPub(pubId);
                 return ;
