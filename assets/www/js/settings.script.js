@@ -1,7 +1,7 @@
 
 $(document).bind('pageinit', function(){
     $('#settings').one('pageshow', function(){
-        //$.mobile.loading('show');
+        
     });
     $('#settings').one('pagebeforeshow', function(){
         console.log('settings pageinit');
@@ -29,6 +29,8 @@ $(document).bind('pageinit', function(){
             window.plugins.childBrowser.showWebPage("http://www.facebook.com/PUBrate.cz", { showLocationBar: true });
         });
         
+        $.mobile.loading('show');
+        
         FB.getLoginStatus(function(response) {
             
             if (response.status == 'connected') {
@@ -41,13 +43,15 @@ $(document).bind('pageinit', function(){
                 //alert('not logged in');
                 console.log('FB: not logged in');
                 console.log(JSON.stringify(response));
+                $.mobile.loading('hide');
             }
         });
         
         $('#settings #fbLogout').bind('tap', function(){
             console.log("fbLogout");
             FB.logout(function(response) {
-                alert('logged out');
+                $.mobile.loading('show');
+                //alert('logged out');
                 
                 showLoggedOut();
             });
@@ -55,6 +59,7 @@ $(document).bind('pageinit', function(){
         
         $('#settings #fbLogin, #settings #fbAddPerms').bind('tap', function(){
             console.log("fbLogin");
+            $.mobile.loading('show');
             CDV.FB.login(
                 {scope: "publish_stream,publish_checkins"},
                 function(response) {
@@ -67,10 +72,13 @@ $(document).bind('pageinit', function(){
                         //checkPerms();
                     } else {
                         $('#fbConnectFailed-popup').popup('open');
+                        $.mobile.loading('hide');
                     }
                 },
                 function(response){
-                    alert("CDV.FB.login fail:" + response);
+                    //alert("CDV.FB.login fail:" + response);
+                    $('#fbConnectFailed-popup').popup('open');
+                    $.mobile.loading('hide');
                 }
             );
         });
@@ -87,6 +95,7 @@ function showLoggedOut(){
     
     $('#settings #fbLogged').hide();
     $('#settings #fbNotLogged').show();
+    $.mobile.loading('hide');
 }
 
 function showLoggedIn(){
@@ -102,7 +111,9 @@ function showLoggedIn(){
             $('#settings #fbNotLogged').hide();
             $('#settings #fbLogged').show();
             
-            user = response;
+            $.mobile.loading('hide');
+            
+            //user = response;
             console.log('Got the user\'s name and picture: ' + JSON.stringify(response));
         }
     });
@@ -118,6 +129,7 @@ function checkPerms(){
         }else{
             $('#settings #addPermsRequired').hide();
         }
+        $.mobile.loading('hide');
         if(!response.data[0].publish_checkins){
             console.log("dont have publish_checkins");
         }else{

@@ -38,17 +38,14 @@
             <div class="info"></div>
             <div class="conditions">            	<p>Vztahuje se na všechny steaky a steaková menu. Sleva se nevztahuje na přílohy.</p>        	</div>
             
-          </div>
-          <div class="span6">
-          <button class="btn btn-large btn-block btn-primary">Získat slevu</a>
-          </div>
+          </div>          <div id="getBenefit" class="span6">          	<button class="btn btn-large btn-block btn-primary" id="getBenefitBtn">Získat slevu</a>          </div>          <div id="fbNotLogged" class="span6 text-center">          	<p class="muted">Nejprve se prosím přihlašte</p>          	<a href="#" id="fbLoginBtn">	            <div class="button_outside_border_blue">	              <div class="button_inside_border_blue">	                Přihlásit pomocí facebooku	              </div>	            </div>            </a>			<p class="gray"><small>Přihlášením souhlasíte s <a href="#" class="conditionsBtn">podmínkami užití</a></small></p>          </div>                    <div id="addPermsRequired" class="text-center">			  <p class="text-error">Nejsou povolena všechna potřebná oprávnění.</p>	          <p>	            <a href="#" id="fbAddPerms">	              <div class="button_outside_border_blue">	                <div class="button_inside_border_blue">	                  Povolit potřebná oprávnění	                </div>	              </div>	            </a>	          </p>          </div>                <div class="benefitCodeWrapper">          <p class="benefitText">Kód slevy:</p>          <div id="benefitCode">      			<p class="code">kód slevy</p>      			<p class="date">datum</p>          </div>        </div>
         </div>
       </div>
       <!--<div class="footer" data-role="footer" data-position="fixed">
         <a href="rating.html" data-icon="star" class="button ui-btn-left">Ohodnotit</a>
       	<a href="benefits.html" data-icon="check" class="button ui-btn-right">Získat výhodu</a>
         <span class="ui-title" />
-      </div>-->
+      </div>-->      		<div data-role="popup" id="codeError-popup">			<p>Nastala chyba při získávání kódu.</p>		</div>      		<div data-role="popup" id="fbConnectFailed-popup">			<p>Přihlášení k Facebooku selhalo.</p>		</div>
   	</div>
   </body>
 </html>
