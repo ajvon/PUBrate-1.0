@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>PUBrate</title>
+  
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+  
+  <body data-theme="a">
+  	<div data-role="page" id="rating" data-theme="a">
+  		<div data-role="header">
+        <a data-role="button" data-transition="none" data-theme="a" href="index.html" data-icon="home" data-iconpos="notext" class="ui-btn-left"></a>
+  			<h4>
+          U Špirků
+          <small>Hodnocení</small>
+        </h4>
+  		</div>
+      <div class="body ratings" data-role="content">
+        <div class="row-fluid">
+          <div class="span6 foto">
+            <img src="http://www.u-spirku.cz/gallery/photo0080.jpg">
+          </div>
+          <div class="span6 contact">
+            <p class="text-info">
+              <strong>Ohodnoťte prosím Váš zážitek v restauraci U Špirků z dnešního dne:</strong>
+            </p>
+          </div>
+        </div>
+        <form action="#">
+          <dl>
+            <dt>Spokojenost s obsluhou</dt>
+            <dd>
+              <input name="star1" type="radio" class="star" />
+              <input name="star1" type="radio" class="star" />
+              <input name="star1" type="radio" class="star" checked="checked" />
+              <input name="star1" type="radio" class="star" />
+              <input name="star1" type="radio" class="star" />
+            </dd>
+            <dt>Prostředí</dt>
+            <dd>
+              <input name="star2" type="radio" class="star" />
+              <input name="star2" type="radio" class="star" />
+              <input name="star2" type="radio" class="star" checked="checked" />
+              <input name="star2" type="radio" class="star" />
+              <input name="star2" type="radio" class="star" />
+            </dd>
+            <dt>Jídlo</dt>
+            <dd>
+              <input name="star3" type="radio" class="star" />
+              <input name="star3" type="radio" class="star" />
+              <input name="star3" type="radio" class="star" checked="checked" />
+              <input name="star3" type="radio" class="star" />
+              <input name="star3" type="radio" class="star" />
+            </dd>
+            <dt>Pití</dt>
+            <dd>
+              <input name="star4" type="radio" class="star" />
+              <input name="star4" type="radio" class="star" />
+              <input name="star4" type="radio" class="star" checked="checked" />
+              <input name="star4" type="radio" class="star" />
+              <input name="star4" type="radio" class="star" />
+            </dd>
+            <dt>Čistota záchodků</dt>
+            <dd>
+              <input name="star5" type="radio" class="star" />
+              <input name="star5" type="radio" class="star" />
+              <input name="star5" type="radio" class="star" checked="checked" />
+              <input name="star5" type="radio" class="star" />
+              <input name="star5" type="radio" class="star" />
+            </dd>
+          </dl>
+          <div class="clear">
+            <textarea placeholder="Vaše postřehy"></textarea>
+          </div>
+          <div class="clear">
+            <input type="submit" value="Odeslat hodnocení" class="btn btn-block btn-large btn-primary" />
+          </div>
+        </form>
+        <div id="thanks">
+          <blockquote>
+            <p class="lead text-success">Děkujeme za Vaše hodnocení a těšíme se na další návštěvu!</p>
+            <small>Váš <cite title="">Restaurant U Špirků</cite></small>
+          </blockquote>
+          <div class="">
+            <a href="pub.html" class="btn btn-large btn-block btn-primary"><span class="gray">Přejít na </span>Restaurace U Špirků</a>
+          </div>
+        </div>
+      </div>
+  	</div>
+  </body>
+</html>
